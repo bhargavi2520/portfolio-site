@@ -16,19 +16,22 @@
 */
 
     --hue: 280;
-    --first-color: rgb(178, 145, 140);
-    --first-color-alt: hsl(9, 52%, 75%);
+    --first-color:  linear-gradient(to right, rgb(255,253,208),rgb(255,218,185));
+    --first-color-alt: linear-gradient(to right, rgb(255,204,187),rgb(224,194,255));
+    --second-color:hsl(214, 75%, 90%);
+    --second-color-alt:#a899c9;
     --white-color: hsl(0, 0%, 98%);
     --black-color: hsl(240, 18%, 25%);
     --info-color: hsl(114, 30%, 62%);
     --text-color: hsl(114, 30%, 62%);
     --body-color: hsl(9, 7%, 11%);
     --container-color: hsl(0, 4%, 23%);
-    --conic-gradient: conic-gradient(from 150deg at 50% 45%, 
-                        hsl(142, 4%, 58%) 0deg,
-                        hsl(9, 15%, 56%) 140deg,
-                        hsl(113, 61%, 89%) 360deg);
-
+    --conic-gradient: conic-gradient(from 180deg at 50% 45%, 
+                                hsl(210, 100%, 94%) 0deg, 
+                                hsl(214, 25%, 80%) 120deg, 
+                                hsl(195, 26%, 80%) 240deg, 
+                                hsl(214, 75%, 90%) 300deg, 
+                                hsl(0, 0%, 100%) 360deg);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat Alternates", sans-serif;
@@ -177,8 +180,8 @@ img {
 /*===== PERFIL =====*/
 .perfil{
     position:relative;
-   /* background:var(--conic-gradient);*/
-    background: linear-gradient(135deg, rgb(171, 150, 146), #d9c4c0); 
+   /* background:var(--first-color);*/
+   background:linear-gradient(90deg,#E6E6FA,#d0aed0);
     height:415px;
     border-radius:2rem;
     padding:1rem;
@@ -187,26 +190,26 @@ img {
     place-items: center;/*added*/
 }
 .perfil__img{  
-/*width:300px;*/
+width:300px;
 position:absolute;
 justify-self:center;
 align-self: flex;
-/*added*/
+/*added
 width:100%;
 height:auto;
-object-fit: cover;
+object-fit: cover;*/
 }
 
 .perfil__data{
     align-self: flex-end;
-    background-color: hsla(0,0%,1%,.1);
+    background-color: hsla(0, 0%, 1%,.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter:blur(16px);
     padding:1.5rem 1rem;
     border-radius:1.5rem;
     border:2px solid hsla(0,0%,100%,.5);
-
 }
+
 .perfil__name{
     font:var(--font-regular)var(--biggest-font-size)var(--second-font);
     margin-bottom:1rem;
@@ -220,7 +223,8 @@ object-fit: cover;
     padding:.75rem 0;
 }
 /*===== INFO =====*/
-.info{
+.info,
+.about,.skills{
     background-color: var(--container-color);
     padding: 2rem 1.5rem;
     border-radius:2rem;
@@ -228,7 +232,7 @@ object-fit: cover;
 .info__circle{
     width:2rem;
     height:2rem;
-    background-color: var(--info-color);
+    background-color:hsl(45, 71%, 71%);
     border-radius: 50%;
 }
 .info__name{
@@ -241,21 +245,22 @@ object-fit: cover;
     column-gap: .5rem;
 }
 .info__image{
-    background:var(--conic-gradient) ;
-    height:300px;
+  background:var(--first-color);
+   /* background:linear-gradient(90deg,#E0E0E0,#F5F5DC);*/
+    height:350px;
     border-radius:2.5rem;
     display:grid;
     margin-block:1.5rem;
     overflow:hidden;
 }
 .info__img{
-    width:150px;
+    width:200px;
     justify-self: center;
     align-self: flex-end;
-    /*added*/
+    /*added
     width:100%;
     height:auto;
-    object-fit: cover;
+    object-fit: cover;*/
 }
 .info__description{
     font-size: var(--small-font-size);
@@ -266,16 +271,97 @@ object-fit: cover;
     
 }
 /*===== ABOUT =====*/
+.about__name{
+  font-size:var(--normal-font-size);
+  font-weight:var(--font-regular);
+  margin-bottom: 1rem;;
+}
+.about__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  margin-block: 2rem;
+}
 
+.about__link {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.4s, color 0.4s;
+}
 
+.about__link:hover{
+  background-color: var(--second-color);
+  /*color:var(--white-color);*/
+}
+.social-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  filter: invert(1);
+}
+
+.leetcode-link,
+.hackerrank-link,
+.gfg-link {
+  background-color:var(--white-color);
+}
+.about__image{
+  background: var(--conic-gradient);
+  height:250px;
+  border-radius: 2rem;
+  display:grid;
+  overflow: hidden;
+  justify-content: center;
+  
+}
+
+.about__img{
+  padding-top:20px;
+  width:250px;
+  justify-content: center;
+  transform: translateY(-2.5rem);
+}
+.about__note{
+  font-size: small;
+  margin-block: 1rem 2rem;
+
+}
+.about .button{
+  width: 100%;
+
+}
 /*===== SKILLS =====*/
+ .skills__title{
+  font-size:var(--h2-font-size);
 
-
+ }
+ .skills__item{
+  width:2rem;/*1.5*/
+  transition: transform .4s;
+ }
+.skills__item:hover{
+   transform:translateY(-.25rem)
+}
+.skills__items{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap:1.5rem;
+  margin-block: 1.5rem;
+}
+.skills__description{
+  font-size: var(--small-font-size);
+}
 /*=============== BUTTON ===============*/
 .button{
     display:inline-flex;
     justify-content: center;
-    background-color: var(--first-color);
+    background-color:var(--black-color);
     color:var(--white-color);
     font-weight:var(--font-semi-bold);
     padding: 1.25rem 2.5rem;
@@ -286,7 +372,7 @@ object-fit: cover;
     background-color:var(--black-color);
 }
 .button:hover{
-    background-color: var(--first-color-alt);
+    background-color:#a899c9;
 }
 /*=============== PROJECTS ===============*/
 
