@@ -1,0 +1,322 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat+Alternates:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+/*========== Colors ==========*/
+/*========== Colors ==========*/
+/* Color mode HSL(hue, saturation, lightness) */
+/* 
+   Elegant and Professional Palette for Women:
+
+   Deep Plum: hsl(280, 40%, 30%) - Dusty Rose: hsl(340, 30%, 60%) 
+   Soft Lavender: hsl(275, 30%, 70%) - Charcoal Gray: hsl(240, 15%, 20%) 
+   Pearl White: hsl(0, 0%, 98%) - Graphite: hsl(240, 20%, 15%) 
+*/
+
+    --hue: 280;
+    --first-color: rgb(178, 145, 140);
+    --first-color-alt: hsl(9, 52%, 75%);
+    --white-color: hsl(0, 0%, 98%);
+    --black-color: hsl(240, 18%, 25%);
+    --info-color: hsl(114, 30%, 62%);
+    --text-color: hsl(114, 30%, 62%);
+    --body-color: hsl(9, 7%, 11%);
+    --container-color: hsl(0, 4%, 23%);
+    --conic-gradient: conic-gradient(from 150deg at 50% 45%, 
+                        hsl(142, 4%, 58%) 0deg,
+                        hsl(9, 15%, 56%) 140deg,
+                        hsl(113, 61%, 89%) 360deg);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat Alternates", sans-serif;
+  --second-font: "Grechen Fuemen", cursive;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1168px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1168px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 2rem 3rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== NAV ===============*/
+.nav{
+    position:fixed;
+    bottom:1.5rem;
+    left:0;
+    right:0;
+    background-color: hsla(0, 0%, 98%,.1);
+    width:88%;
+    margin-inline: auto;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding:1rem 2rem;
+    border-radius: 4rem;
+    z-index:var(--z-fixed);
+}
+.nav__list{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.nav__link{
+    width:2.5rem;
+    height:2.5rem;
+    background-color:transparent;
+    color:var(--white-color);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display:grid;
+    place-items: center;
+    transition:background-color .6s;
+}
+/* Active link */
+
+
+/*=============== HOME ===============*/
+/*===== PERFIL =====*/
+.perfil{
+    position:relative;
+   /* background:var(--conic-gradient);*/
+    background: linear-gradient(135deg, rgb(171, 150, 146), #d9c4c0); 
+    height:415px;
+    border-radius:2rem;
+    padding:1rem;
+    display: grid;
+    overflow:hidden;
+    place-items: center;/*added*/
+}
+.perfil__img{  
+/*width:300px;*/
+position:absolute;
+justify-self:center;
+align-self: flex;
+/*added*/
+width:100%;
+height:auto;
+object-fit: cover;
+}
+
+.perfil__data{
+    align-self: flex-end;
+    background-color: hsla(0,0%,1%,.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    padding:1.5rem 1rem;
+    border-radius:1.5rem;
+    border:2px solid hsla(0,0%,100%,.5);
+
+}
+.perfil__name{
+    font:var(--font-regular)var(--biggest-font-size)var(--second-font);
+    margin-bottom:1rem;
+}
+.perfil__buttons{
+    display:grid;
+    column-gap:.5rem;
+    grid-template-columns: repeat(2,1fr);
+}
+.perfil__buttons .button{
+    padding:.75rem 0;
+}
+/*===== INFO =====*/
+.info{
+    background-color: var(--container-color);
+    padding: 2rem 1.5rem;
+    border-radius:2rem;
+}
+.info__circle{
+    width:2rem;
+    height:2rem;
+    background-color: var(--info-color);
+    border-radius: 50%;
+}
+.info__name{
+    font:var(--font-regular)var(--h1-font-size)var(--second-font);
+}
+.info__data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .5rem;
+}
+.info__image{
+    background:var(--conic-gradient) ;
+    height:300px;
+    border-radius:2.5rem;
+    display:grid;
+    margin-block:1.5rem;
+    overflow:hidden;
+}
+.info__img{
+    width:150px;
+    justify-self: center;
+    align-self: flex-end;
+    /*added*/
+    width:100%;
+    height:auto;
+    object-fit: cover;
+}
+.info__description{
+    font-size: var(--small-font-size);
+    margin-bottom: 2rem;
+}
+.info .button{
+    width: 100%;
+    
+}
+/*===== ABOUT =====*/
+
+
+/*===== SKILLS =====*/
+
+
+/*=============== BUTTON ===============*/
+.button{
+    display:inline-flex;
+    justify-content: center;
+    background-color: var(--first-color);
+    color:var(--white-color);
+    font-weight:var(--font-semi-bold);
+    padding: 1.25rem 2.5rem;
+    border-radius: 4rem;
+    transition: background-color .4s;
+}
+.button__black{
+    background-color:var(--black-color);
+}
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+/*=============== PROJECTS ===============*/
+
+
+/*=============== SERVICES ===============*/
+
+
+/*=============== EXPERIENCE ===============*/
+
+
+/*=============== CONTACT ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
