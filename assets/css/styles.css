@@ -536,7 +536,29 @@ object-fit: cover;*/
   font-size: var(--smaller-font-size);
  }
 /*=============== FOOTER ===============*/
-
+.footer{
+  padding-block:2rem 8rem;
+}
+.footer__container{
+  row-gap: 2.5rem;
+}
+.footer__logo{
+  color:var(--white-color);
+  font:var(--font-regular) var(--biggest-font-size) var(--second-color);
+  justify-self: center;
+}
+.footer__links{
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+.footer__link{
+  color:var(--white-color);
+  transition: color .4s;
+}
+.footer__link:hover{
+  color:var(--text-color);
+}
 
 /*=============== SCROLL BAR ===============*/
 
