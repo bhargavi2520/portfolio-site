@@ -15,6 +15,9 @@
     --text-color: hsl(271, 31%, 85%);
     --body-color: hsl(9, 7%, 11%);
     --container-color: hsl(0, 4%, 23%);
+    --highlight-yellow: hsl(45, 71%, 71%); /* Added for info circle */
+    --perfil-gradient-start: #E6E6FA; /* Lavender */
+    --perfil-gradient-end: #d0aed0;  /*added*/
     --conic-gradient: conic-gradient(from 180deg at 50% 45%, 
                                 hsl(210, 33%, 75%) 0deg, 
                                 hsl(214, 22%, 73%) 120deg, 
@@ -137,7 +140,7 @@ img {
     bottom:1.5rem;
     left:0;
     right:0;
-    background-color: hsla(0, 0%, 98%,.1);
+    background-color: hsla(0, 0%, 98%,0.1);
     width:88%;
     margin-inline: auto;
     backdrop-filter: blur(16px);
@@ -171,8 +174,7 @@ img {
 /*===== PERFIL =====*/
 .perfil{
     position:relative;
-   /* background:var(--first-color);*/
-   background:linear-gradient(90deg,#E6E6FA,#d0aed0);
+   background:linear-gradient(90deg, var(--perfil-gradient-start), var(--perfil-gradient-end));
     height:415px;
     border-radius:2rem;
     padding:1rem;
@@ -184,7 +186,8 @@ img {
 width:300px;
 position:absolute;
 justify-self:center;
-align-self: flex;
+align-self: center;/*changed*/
+object-fit: cover;
 /*added
 width:100%;
 height:auto;
@@ -193,7 +196,7 @@ object-fit: cover;*/
 
 .perfil__data{
     align-self: flex-end;
-    background-color: hsla(0, 0%, 1%,.1);
+    background-color: hsla(0, 0%, 1%,0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter:blur(16px);
     padding:1.5rem 1rem;
@@ -223,7 +226,7 @@ object-fit: cover;*/
 .info__circle{
     width:2rem;
     height:2rem;
-    background-color:hsl(45, 71%, 71%);
+    background-color:var(--highlight-yellow);
     border-radius: 50%;
 }
 .info__name{
@@ -248,7 +251,7 @@ object-fit: cover;*/
 .info__img{
     width:200px;
     justify-self: center;
-    align-self: flex-end;
+    align-self:end;
     
     /*added
     width:100%;
@@ -365,7 +368,7 @@ object-fit: cover;*/
     background-color:var(--black-color);
 }
 .button:hover{
-    background-color:#a899c9;
+    background-color:var(--second-color-alt);
 }
 /*=============== PROJECTS ===============*/
 .projects__card{
@@ -580,8 +583,8 @@ object-fit: cover;*/
  .scrollup{
   position: fixed;
   right:1rem;
-  bottom:2rem;
-  background-color: hsla(0,0%,98%,.1);
+  bottom:-5rem;
+  background-color: hsla(0,0%,98%,0.1);
   display:inline-flex;
   padding: 6px;
   color:var(--white-color);
