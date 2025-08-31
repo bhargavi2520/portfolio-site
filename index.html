@@ -1,410 +1,206 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhargavi Mondem</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="tailwind.config.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- <div class="fixed top-0 right-0 w-12/12 -z-10 translate-y-[-85%]">
+      <img
+        src="./assets/background.jpeg"
+        alt="Background Image"
+        class="w-full"
+      />
+    </div> -->
+    <!-- ------background image------ -->
+    <div class="fixed inset-0 -z-10 w-full h-full">
+      <video autoplay loop muted playsinline class="object-cover w-full h-full">
+        <source src="./assets/video/videobackground.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- ------------header---------------- -->
+    <nav
+      class="w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 bg-transparent"
+    >
+      <img
+        src="./assets/logoblack.png"
+        alt="Logo"
+        class="w-35 cursor-pointer mr-14"
+      />
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+      <ul
+        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 shadow-sm bg-opacity-50 font-semibold"
+      >
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-4">
+        <button>
+          <img
+            src="./assets/theme_dark.png"
+            alt=""
+            class="w-8 border-2 border-black cursor-pointer rounded-full"
+          />
+        </button>
+        <a
+          href="#contact"
+          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border-1 border-gray-500 rounded-full ml-4 font-semibold"
+          >Contact <img src="./assets/contact.png" alt="Contact" class="w-6"
+        /></a>
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      <link rel="stylesheet" href="https://cdn.simpleicons.org/">
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+        <button class="block md:hidden ml-3" onclick="openMenu()">
+          <img src="./assets/Menu.png" alt="" class="w-6 cursor-pointer" />
+        </button>
+      </div>
 
-      <title>Bhargavi's Portfolio</title>
-   </head>
-   <body>
-      <!--==================== NAV ====================-->
-      <nav class="nav">
-         <ul class="nav__list">
-            <li>
-                <a href="#home"title="Home" class="nav__link active-link">
-                    <i class="ri-home-2-line"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#projects"title="Projects" class="nav__link">
-                    <i class="ri-folder-2-line"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#services"title="Services" class="nav__link">
-                    <i class="ri-file-edit-line"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#experience"title="Experience" class="nav__link">
-                    <i class="ri-honour-line"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#contact"title="Contact" class="nav__link">
-                    <i class="ri-send-plane-2-line"></i>
-                </a>
-            </li>
-         </ul>
-      </nav>
+      <!-- ----------------mobile menu---------------- -->
+      <ul
+        id="sideMenu"
+        class="flex md:hidden flex-col gap-4 pt-8 px-8 fixed -right-64 top-0 bottom-0 w-72 z-50 h-screen bg-white transition duration-500"
+      >
+        <!-- Header: Menu title and close icon side by side -->
+        <div class="flex items-center justify-between mb-10">
+          <h2 class="font-bold text-2xl text-gray-800">Menu</h2>
+          <button onclick="closeMenu()">
+            <img
+              src="./assets/close.png"
+              alt="Close"
+              class="w-7 h-7 cursor-pointer"
+            />
+          </button>
+        </div>
+        <li class="flex items-center gap-3 mt-2">
+          <img src="./assets/home_icon.png" alt="Home" class="w-6" />
+          <a href="#home" onclick="closeMenu()" class="text-gray-700 text-lg"
+            >Home</a
+          >
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="./assets/about_icon.png" alt="About" class="w-6" />
+          <a href="#about" onclick="closeMenu()" class="text-gray-700 text-lg"
+            >About Me</a
+          >
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="./assets/projects_icon.png" alt="Projects" class="w-6" />
+          <a
+            href="#projects"
+            onclick="closeMenu()"
+            class="text-gray-700 text-lg"
+            >Projects</a
+          >
+        </li>
+        <li class="flex items-center gap-3">
+          <img src="./assets/contact_icon.png" alt="Contact" class="w-6" />
+          <a href="#contact" onclick="closeMenu()" class="text-gray-700 text-lg"
+            >Contact Me</a
+          >
+        </li>
+        <!-- Profile section at the bottom -->
+        <div class="absolute bottom-6 left-0 w-full px-8">
+          <div class="flex items-center gap-3 border-t pt-4">
+            <img
+              src="./assets/bhargavi.jpg"
+              alt="Profile"
+              class="w-10 h-10 aspect-square object-cover rounded-full mb-4"
+            />
+            <span class="font-semibold text-lg text-gray-800"
+              >BHARGAVI MONDEM</span
+            >
+          </div>
+        </div>
+      </ul>
+    </nav>
+    <!------------header---------------- -->
+    <div
+      class="w-11/12 max-w-3xl text-center mx-auto min-h-screen flex flex-col items-center justify-center gap-6 pt-25"
+    >
+      <img
+        src="./assets/bhargavi.jpg"
+        alt="Profile"
+        class="w-50 h-50 aspect-square object-cover rounded-full mb-4 border border-black"
+      />
+      <h1
+        class="flex items-center justify-center gap-4 font-extrabold text-5xl md:text-6xl uppercase text-gray-800 mb-2"
+      >
+        HEY, I'M BHARGAVI
+      </h1>
+      <p class="text-2xl text-gray-500 mt-2 leading-relaxed flex">
+        I am a final year Computer Science student passionate about Full-Stack
+        Development and Artificial Intelligence, always curious to learn new
+        things and eager to build impactful projects.
+      </p>
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            <div class="home__container container grid">
-               <!--===== PERFIL =====-->
-               <div class="perfil">
-                <img src="assets/img/lavender.png" alt="image" class="perfil__img">
-               <div class="perfil__data">
-                <h1 class="perfil__name">Bhargavi <br> Mondem</h1>
-                <div class="perfil__buttons">
-                    <a href="#projects"class="button">Projects</a>
-                    <a href="#services" class="button button__black">Services</a>
-                </div>
-               </div>
-            </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+        <a
+          href="./assets/video/bhargaviM.pdf"
+          download
+          class="w-44 px-10 py-3 border-2 rounded-full border-gray-600 flex justify-center items-center gap-2 font-semibold text-black bg-white whitespace-nowrap"
+        >
+          Resume
+          <img src="./assets/download.png" alt="download" class="w-5" />
+        </a>
 
-               <!--===== INFO =====-->
-            <div class="info">
-                <div class="info__data">
-                    <div class="info__circle">
-                    </div>
-                    <h1 class="info__name">Bhargavi Mondem</h1>
-                </div>
-                <div class="info__image">
-                    <img src="assets/img/home-perfil1.jpg" alt="image" class="info__img">
-                </div>
-                <p class="info__description">
-                    Computer Science graduate with a focus on full-stack development and Artificial intelligence
-                    ,dedicated to continuous learning and improving problem-solving skills.
-                </p>
-                <a href="assets/pdf/bhargavi-CV.pdf" download target="_blank" class="button button__black">Download CV</a>
-            </div>
+        <a
+          href="#contact"
+          class="w-44 px-10 py-3 border-2 border-transparent rounded-full flex justify-center items-center gap-2 font-semibold text-white whitespace-nowrap"
+          style="background: linear-gradient(90deg, #b820e6 0%, #da7d20 100%)"
+        >
+          Contact Me
+          <span class="text-xl">&#8594;</span>
+        </a>
+      </div>
 
-               <!--===== ABOUT =====-->
-            <div class="about">
-                <h2 class="about__name">
-                    Bhargavi Mondem - <b>Computer Science Student At Avanthi Institute of Engineering and Technology</b>
-                </h2>
-                <p class="about__description">
-                    I am passionate about technology and skilled in Java, Python,Javascript, HTML, and CSSand backend technologies with a focus on full-stack development and AI/ML.
-                     I thrive on exploring innovative solutions and tackling challenging projects. My goal is to leverage my skills to make a positive impact in the tech industry.
-                </p>
-                <div class="about__social">
-                    <a href="https://www.linkedin.com/in/bhargavi-m-1a497a294/" target="_blank" class="about__link">
-                        <i class="ri-linkedin-box-line"></i>
-                    </a>
-                
-                    <a href="https://github.com/bhargavi2520" target="_blank" class="about__link">
-                        <i class="ri-github-fill"></i>
-                    </a>
+      <!-- links -->
+      <div class="flex items-center justify-center gap-6">
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/bhargavi2520/"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-[#0A66C2] transition-all duration-300 hover:bg-[#0A66C2] hover:text-white hover:scale-110"
+        >
+          <i class="ri-linkedin-fill text-3xl"></i>
+        </a>
 
-                    <a href="https://leetcode.com/u/bhargavi_2520/" target="_blank" class="about__link leetcode-link">
-                        <img src="https://cdn.simpleicons.org/leetcode/FFFFFF" alt="LeetCode" class="social-icon">
-                    </a>
-                
-                    <a href="https://www.hackerrank.com/profile/bhargavi5052" target="_blank" class="about__link hackerrank-link">
-                        <img src="https://cdn.simpleicons.org/hackerrank/FFFFFF" alt="HackerRank" class="social-icon">
-                    </a>
-                
-                    <a href="https://www.geeksforgeeks.org/user/bhargav6uim" target="_blank" class="about__link gfg-link">
-                        <img src="https://cdn.simpleicons.org/geeksforgeeks/FFFFFF" alt="GeeksforGeeks" class="social-icon">
-                    </a>
-                </div>
-                
-                <div class="about__image">
-                    <img src="assets/img/green.png" alt="image" class="about__img">
-                </div>
-                <p class="about__note">
-                    Contact me via email, and I'll make sure to respond. 
-                </p>
-                <a href="#contact" class="button">Contact Me</a>
-            </div>
+        <!-- GitHub -->
+        <a
+          href="https://github.com/bhargavi2520"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-black transition-all duration-300 hover:bg-black hover:text-white hover:scale-110"
+        >
+          <i class="ri-github-fill text-3xl"></i>
+        </a>
 
-               <!--===== SKILLS =====-->
-               <div class="skills">
-                  <h2 class="skills__title">Skills</h2>
-                  <div class="skills__items">
-                    <img src="assets/img/html.svg" alt="html" class="skills__item">
-                    <img src="assets/img/CSS.3.svg" alt="css" class="skills__item">
-                    <img src="assets/img/javascript.svg" alt="javascript" class="skills__item">
-                    <img src="assets/img/node.png" alt="node" class="skills__item">
-                    <img src="assets/img/react.svg" alt="react" class="skills__item">
-                    <img src="assets/img/git-bash.svg" alt="git" class="skills__item">
-                    <img src="assets/img/github.jpeg" alt="github" class="skills__item">
-                    <img src="assets/img/java.svg" alt="java" class="skills__item">
-                    <img src="assets/img/python.svg" alt="python" class="skills__item">
-                    <img src="assets/img/dsa.png" alt="DSA" class="skills__item">
-                  </div>
-                  <p class="skills__description">
-                    Visit the projects section to see 
-                    the work done with these web technologies.
-                  </p>
-               </div>
-            </div>
-         </section>
+        <!-- Code -->
+        <a
+          href="https://codolio.com/profile/bhargavi2520"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-[#065918] transition-all duration-300 hover:bg-[#065918] hover:text-white hover:scale-110"
+        >
+          <i class="ri-code-s-slash-line text-3xl"></i>
+        </a>
 
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            <h2 class="section__title">RECENT PROJECTS</h2>
+        <!-- Email -->
+        <a
+          href="mailto:bhargavimondem5052@gmail.com"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-[#EA4335] transition-all duration-300 hover:bg-[#EA4335] hover:text-white hover:scale-110"
+        >
+          <i class="ri-mail-fill text-3xl"></i>
+        </a>
+      </div>
+    </div>
 
-            <div class="projects__container container grid">
-                <article class="projects__card">
-                    <a href="#"target="_blank" class="projects__image">
-                        <img src="assets/img/progress.jpeg" alt="project-1" class="projects__img">
-                    </a>
-                    <div class="projects__data">
-                        <h3 class="projects__name">Project-1</h3>
-                        <p class="projects__description">
-                            Short description of the project that was
-                            carried out in this portfolio.
-                        </p>
-
-                        <div class="projects__skills">
-                           <img src="assets/img/html.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/CSS.3.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/javascript.svg" alt="image" class="projects__skill"> 
-                        </div>
-                        <a href="#" target="_blank"class="projects__button">
-                            <i class="ri-link"></i>
-                            <span>Visit Project</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="projects__card">
-                    <a href="#"target="_blank" class="projects__image">
-                        <img src="assets/img/progress.jpeg" alt="project-1" class="projects__img">
-                    </a>
-                    <div class="projects__data">
-                        <h3 class="projects__name">Project-2</h3>
-                        <p class="projects__description">
-                            Short description of the project that was
-                            carried out in this portfolio.
-                        </p>
-
-                        <div class="projects__skills">
-                           <img src="assets/img/html.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/CSS.3.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/javascript.svg" alt="image" class="projects__skill"> 
-                        </div>
-                        <a href="#" target="_blank"class="projects__button">
-                            <i class="ri-link"></i>
-                            <span>Visit Project</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="projects__card">
-                    <a href="#"target="_blank" class="projects__image">
-                        <img src="assets/img/progress.jpeg" alt="project-1" class="projects__img">
-                    </a>
-                    <div class="projects__data">
-                        <h3 class="projects__name">Project-3</h3>
-                        <p class="projects__description">
-                            Short description of the project that was
-                            carried out in this portfolio.
-                        </p>
-
-                        <div class="projects__skills">
-                           <img src="assets/img/html.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/CSS.3.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/javascript.svg" alt="image" class="projects__skill"> 
-                        </div>
-                        <a href="#" target="_blank"class="projects__button">
-                            <i class="ri-link"></i>
-                            <span>Visit Project</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="projects__card">
-                    <a href="#"target="_blank" class="projects__image">
-                        <img src="assets/img/progress.jpeg" alt="project-1" class="projects__img">
-                    </a>
-                    <div class="projects__data">
-                        <h3 class="projects__name">Project-4</h3>
-                        <p class="projects__description">
-                            Short description of the project that was
-                            carried out in this portfolio.
-                        </p>
-
-                        <div class="projects__skills">
-                           <img src="assets/img/html.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/CSS.3.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/javascript.svg" alt="image" class="projects__skill"> 
-                        </div>
-                        <a href="#" target="_blank"class="projects__button">
-                            <i class="ri-link"></i>
-                            <span>Visit Project</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="projects__card">
-                    <a href="#"target="_blank" class="projects__image">
-                        <img src="assets/img/progress.jpeg" alt="project-1" class="projects__img">
-                    </a>
-                    <div class="projects__data">
-                        <h3 class="projects__name">Project-5</h3>
-                        <p class="projects__description">
-                            Short description of the project that was
-                            carried out in this portfolio.
-                        </p>
-
-                        <div class="projects__skills">
-                           <img src="assets/img/html.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/CSS.3.svg" alt="image" class="projects__skill">
-                           <img src="assets/img/javascript.svg" alt="image" class="projects__skill"> 
-                        </div>
-                        <a href="#" target="_blank"class="projects__button">
-                            <i class="ri-link"></i>
-                            <span>Visit Project</span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-         </section>
-
-         <!--==================== SERVICES ====================-->
-         <section class="services section" id="services">
-               <h2 class="section__title">SERVICES I OFFER</h2>
-
-               <div class="services__container container grid">
-                <article class="services__card">
-                    <div class="services__icon">
-                        <div class="services__circle"></div>
-                        <i class="ri-code-box-line"></i>
-                    </div>
-                    <h3 class="services__name">Web development</h3>
-                    <p class="services__description">
-                        Short description of the service
-                        offered to users to obtain a personalized project.
-                    </p>
-                </article>
-
-                <article class="services__card">
-                    <div class="services__icon">
-                        <div class="services__circle"></div>
-                        <i class="ri-quill-pen-line"></i>
-
-                    </div>
-                    <h3 class="services__name">Web design</h3>
-                    <p class="services__description">
-                        Short description of the service
-                        offered to users to obtain a personalized project.
-                    </p>
-                </article>
-
-                <article class="services__card">
-                    <div class="services__icon">
-                        <div class="services__circle"></div>
-                        <i class="ri-seo-line"></i>
-                    </div>
-                    <h3 class="services__name">Seo (web pages)</h3>
-                    <p class="services__description">
-                        Short description of the service
-                        offered to users to obtain a personalized project.
-                    </p>
-                </article>
-               </div>
-         </section>
-
-         <!--==================== EXPERIENCE ====================-->
-         <section class="experience section" id="experience">
-            <h2 class="section__title">EXPERIENCE OR WORK</h2>
-            <div class="experience__container container grid">
-                <article class="experience__card">
-                    <h2 class="experience__company">XYZ</h2>
-                    <div class="experience__data">
-                        <h3 class="experience__profession">Developer</h3>
-                        <span class="experience__date">25/25 - 25/25</span>
-                        <p class="experience__description">
-                            short description of the work
-                             you do or did in the company.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="experience__card">
-                    <h2 class="experience__company">XYZ</h2>
-                    <div class="experience__data">
-                        <h3 class="experience__profession">Developer</h3>
-                        <span class="experience__date">25/25 - 25/25</span>
-                        <p class="experience__description">
-                            short description of the work
-                             you do or did in the company.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="experience__card">
-                    <h2 class="experience__company">XYZ</h2>
-                    <div class="experience__data">
-                        <h3 class="experience__profession">Developer</h3>
-                        <span class="experience__date">25/25 - 25/25</span>
-                        <p class="experience__description">
-                            short description of the work
-                             you do or did in the company.
-                        </p>
-                    </div>
-                </article>
-
-               
-            </div>
-         </section>
-
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            <h2 class="section__title">CONTACT ME</h2>
-            <div class="contact__container container grid">
-                <form action="" class="contact__form grid" id="contact-form">
-                    <div class="contact__group grid">
-                        <input type="text"name="user_name" placeholder="Enter your name" required class="contact__input">
-                        <input type="email"name="user_email" placeholder="enter your Email" required class="contact__input">
-                    </div>
-
-                    <textarea name="user_message"placeholder="Message" class="contact__input contact__area"></textarea>
-                    <button type="submit"class="button contact__button">Send Message</button>
-
-                    <p class="contact__message"id="contact-message"></p>
-                </form>
-            </div>
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         <div class="footer__container container grid">
-            <div class="footer__content grid">
-                <a href="#" class="footer__logo">Bhargavi</a>
-                <ul class="footer__links">
-                    <li>
-                        <a href="#home" class="footer__link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#projects" class="footer__link">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#services" class="footer__link">Services</a>
-                    </li>
-                </ul>
-            </div>
-         </div>
-      </footer>
-  
-      <!--========== SCROLL UP ==========-->
-      <a href="#" class="scrollup" id="scroll-up">
-        <i class="ri-arrow-up-line"></i>
-      </a>
-
-      <!--=============== SCROLL REVEAL ===============-->
-      <script src="assets/js/scrollreveal.min.js"></script>
-
-      <!--=============== EMAIL JS ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+    <script src="script.js"></script>
+  </body>
 </html>
