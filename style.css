@@ -1,0 +1,42 @@
+/* Hide the video background when not in home section
+#about ~ .home-bg,
+#about .home-bg {
+  display: none !important;
+}
+@media (min-width: 1024px) {
+  #home {
+    min-height: 100vh;
+    height: 100vh;
+  }
+} */
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+.skill-badge {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #1f2937;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.skill-badge:hover {
+  background: linear-gradient(90deg, #b820e6 0%, #da7d20 100%);
+  color: #fff;
+  border: 1px solid #b820e6;
+  box-shadow: 0 4px 20px 0 rgba(186, 32, 230, 0.15);
+}
