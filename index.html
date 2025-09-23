@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
-<
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +16,7 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="overflow-x-hidden">
+  <body class="overflow-x-hidden dark:bg-darkTheme">
     <!-- <div class="fixed top-0 right-0 w-12/12 -z-10 translate-y-[-85%]">
       <img
         src="./assets/background.jpeg"
@@ -33,6 +32,7 @@
         src="./assets/logoblack.png"
         alt="Logo"
         class="w-35 cursor-pointer mr-14 flex"
+        id="logo"
       />
 
       <ul
@@ -45,11 +45,12 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="flex items-center gap-4">
-        <button>
+        <button id="theme-toggle">
           <img
             src="./assets/theme_dark.png"
             alt=""
             class="w-8 border-2 border-black cursor-pointer rounded-full"
+            id="theme-icon"
           />
         </button>
         <a
