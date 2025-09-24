@@ -37,6 +37,13 @@ body {
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
+
+/* Dark mode styles for skill badges */
+.dark .skill-badge {
+  background: #374151;
+  color: #f9fafb;
+  border: 1px solid #6b7280;
+}
 .skill-badge:hover {
   background: linear-gradient(90deg, #b820e6 0%, #da7d20 100%);
   color: #fff;
