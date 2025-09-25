@@ -34,12 +34,12 @@ themeToggle.addEventListener("click", () => {
   if (isDarkMode) {
     localStorage.setItem("theme", "dark");
     if (logo) logo.src = "./assets/logowhite.png";
-    themeIcon.src = "./assets/theme_light.png";
+    themeIcon.className = "ri-sun-line text-white";
     heroContent.classList.add("text-white");
   } else {
     localStorage.setItem("theme", "light");
     if (logo) logo.src = "./assets/logoblack.png";
-    themeIcon.src = "./assets/theme_dark.png";
+    themeIcon.className = "ri-moon-line text-black";
     heroContent.classList.remove("text-white");
   }
 
@@ -51,12 +51,12 @@ const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   document.documentElement.classList.add("dark");
   if (logo) logo.src = "./assets/logowhite.png";
-  themeIcon.src = "./assets/theme_light.png";
+  themeIcon.className = "ri-sun-line text-white";
   heroContent.classList.add("text-white");
   updateHeroVideoSource(true);
 } else {
   if (logo) logo.src = "./assets/logoblack.png";
-  themeIcon.src = "./assets/theme_dark.png";
+  themeIcon.className = "ri-moon-line text-black";
   heroContent.classList.remove("text-white");
   updateHeroVideoSource(false);
 }

@@ -1,17 +1,43 @@
-/* Hide the video background when not in home section
-#about ~ .home-bg,
-#about .home-bg {
-  display: none !important;
+/* Enable smooth scrolling across the page */
+html {
+  scroll-behavior: smooth;
 }
-@media (min-width: 1024px) {
-  #home {
-    min-height: 100vh;
-    height: 100vh;
-  }
-} */
+
 body {
-  font-family: "Inter", sans-serif;
+  /* Apply the new base font for all body text */
+  font-family: "Roboto", sans-serif;
 }
+
+/* Sublte, Modern Navigation Hover Effect */
+.nav-link-hover {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  /* Pink-500 to Violet-500 gradient underline */
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-link-hover:hover {
+  color: #ec4899; /* pink-500 for hover color */
+}
+.dark .nav-link-hover:hover {
+  color: #d8b4fe; /* violet-300 for dark mode hover color */
+}
+
+.nav-link-hover:hover::after {
+  width: 100%;
+}
+
 /* Marquee animation */
 @keyframes marquee {
   0% {
@@ -44,9 +70,25 @@ body {
   color: #f9fafb;
   border: 1px solid #6b7280;
 }
+/* Updated skill badge hover gradient to match requested colors */
 .skill-badge:hover {
-  background: linear-gradient(90deg, #b820e6 0%, #da7d20 100%);
+  background: linear-gradient(
+    90deg,
+    #ec4899 0%,
+    #8b5cf6 100%
+  ); /* Pink-500 to Violet-500 */
   color: #fff;
-  border: 1px solid #b820e6;
-  box-shadow: 0 4px 20px 0 rgba(186, 32, 230, 0.15);
+  border: 1px solid #ec4899; /* Pink-500 border */
+  box-shadow: 0 4px 20px 0 rgba(236, 72, 153, 0.15); /* Updated shadow color */
+}
+
+/* Custom class for Contact section background to handle dark mode image change */
+.contact-section-bg {
+  /* Light Mode Background Image */
+  background-image: url("./assets/background.jpeg");
+}
+
+.dark .contact-section-bg {
+  /* Dark Mode Background Image */
+  background-image: url("./assets/backg.jpeg");
 }
