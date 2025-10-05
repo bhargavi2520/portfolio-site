@@ -17,8 +17,8 @@ const heroContent = document.getElementById("hero-content"); // Add this line
 // Update the video source immediately on theme change
 function updateHeroVideoSource(isDarkMode) {
   const newSrc = isDarkMode
-    ? "./assets/video/blackBackGround.mp4"
-    : "./assets/video/videobackground.mp4";
+    ? "./assets/video/blackBackGroundb.mp4"
+    : "./assets/video/videobackgroundw.mp4";
   if (heroVideoSource.src !== newSrc) {
     // Update the <source> tag's src
     heroVideoSource.src = newSrc;
