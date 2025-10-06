@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Swiper(".certification-swiper", {
       loop: true,
       autoplay: {
-        delay: 1500, // Auto-slide every 1.5 seconds
+        delay: 2500, // Auto-slide every 1.5 seconds
         disableOnInteraction: false,
       },
       slidesPerView: 1,
