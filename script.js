@@ -256,6 +256,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Initialize Swiper for Certifications Carousel
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".certification-swiper", {
+      loop: true,
+      autoplay: {
+        delay: 1500, // Auto-slide every 1.5 seconds
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+
   // Anime.js Animation Logic
   if (typeof anime !== "undefined") {
     const observerOptions = { threshold: 0.1 };
