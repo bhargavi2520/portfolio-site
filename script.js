@@ -211,4 +211,69 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
       });
   }
+
+  // Initialize Swiper for Certifications Carousel
+  // Anime.js Animation Logic
+  if (typeof anime !== "undefined") {
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("anim-fade-in")) {
+            anime({
+              targets: entry.target,
+              translateY: [-30, 0],
+              opacity: [0, 1],
+              duration: 1000,
+              easing: "easeOutExpo",
+            });
+          }
+          if (entry.target.classList.contains("anim-skills-list")) {
+            const timeline = anime.timeline({
+              easing: "easeOutExpo",
+              duration: 800,
+            });
+            timeline
+              .add({
+                targets: ".skill-category",
+                opacity: [0, 1],
+                translateY: [20, 0],
+                delay: anime.stagger(200),
+              })
+              .add(
+                {
+                  targets: ".skill-link",
+                  scale: [0.8, 1],
+                  opacity: [0, 1],
+                  delay: anime.stagger(70, { from: "first" }),
+                },
+                "-=800"
+              );
+          }
+          if (entry.target.classList.contains("anim-journey-card")) {
+            anime({
+              targets: entry.target,
+              translateY: [30, 0],
+              opacity: [0, 1],
+              duration: 1000,
+              easing: "easeOutExpo",
+            });
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document
+      .querySelectorAll(".anim-fade-in, .skill-category, .anim-journey-card")
+      .forEach((el) => {
+        el.style.opacity = "0";
+      });
+
+    document
+      .querySelectorAll(".anim-fade-in, .anim-skills-list, .anim-journey-card")
+      .forEach((el) => {
+        observer.observe(el);
+      });
+  }
 });

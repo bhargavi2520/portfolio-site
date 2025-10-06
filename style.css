@@ -9,7 +9,7 @@ body {
   background-color: #f9fafb;
 }
 .dark body {
-  background-color: #010101; /* Dark mode background */
+  background-color: #121826; /* Dark mode background */
 }
 /* Sublte, Modern Navigation Hover Effect */
 .nav-link-hover {
@@ -52,37 +52,6 @@ body {
 }
 .animate-marquee {
   animation: marquee 9s linear infinite;
-}
-.skill-badge {
-  display: inline-block;
-  padding: 0.75rem 2.5rem;
-  border-radius: 9999px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
-  color: #1f2937;
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0.5rem;
-  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-/* Dark mode styles for skill badges */
-.dark .skill-badge {
-  background: #374151;
-  color: #f9fafb;
-  border: 1px solid #6b7280;
-}
-/* Updated skill badge hover gradient to match requested colors */
-.skill-badge:hover {
-  background: linear-gradient(
-    90deg,
-    #ec4899 0%,
-    #8b5cf6 100%
-  ); /* Pink-500 to Violet-500 */
-  color: #fff;
-  border: 1px solid #ec4899; /* Pink-500 border */
-  box-shadow: 0 4px 20px 0 rgba(236, 72, 153, 0.15); /* Updated shadow color */
 }
 
 /* Custom class for Contact section background to handle dark mode image change */
@@ -155,4 +124,84 @@ body {
 .anim-hero-headline .letter {
   display: inline-block;
   line-height: 1em;
+}
+
+/* /skills section */
+.skill-link {
+  transition: transform 0.2s ease-in-out;
+}
+.skill-link:hover {
+  transform: scale(1.05);
+}
+
+.calendar-container {
+  /* Adjusted styles for the image chart */
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  /* REDUCED PADDING */
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  display: flex; /* To center the image */
+  justify-content: center; /* To center the image */
+  background-color: #fff; /* Ensure white background for the chart */
+}
+.dark .calendar-container {
+  border-color: #374151;
+  background-color: #1f2937;
+}
+
+/* Style for the GitHub chart image */
+.github-chart {
+  width: 100%; /* Make the chart responsive */
+  max-width: 100%;
+  height: auto;
+}
+
+.dark .github-chart {
+  /* Apply the dark mode theme colors from the URL parameter, if not already in the image */
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* --- SWIPER / CERTIFICATION STYLES from second file --- */
+.swiper-pagination-bullet-active {
+  background: #8b5cf6 !important;
+}
+/* Reduced padding for low margin and single-slide view */
+.swiper-container {
+  padding-top: 10px !important;
+  padding-bottom: 20px !important;
+  width: 100%;
+  overflow: hidden;
+}
+
+.certification-card-content {
+  position: relative;
+  z-index: 1;
+  /* UPDATED: Stronger, more multi-directional shadow for visibility */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
+    /* Subtle border effect */ 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    /* Main shadow (bottom) */ 0 -2px 5px -2px rgba(0, 0, 0, 0.03); /* Slight lift (top) */
+  transition: box-shadow 0.2s ease; /* Removed border-color from transition */
+  border: 2px solid transparent;
+}
+
+.dark .certification-card-content {
+  background-color: #1f2937; /* Gray-800 equivalent */
+  /* Dark mode shadow adjustment */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
+    /* Subtle border effect */ 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 -2px 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+.certification-card-content:hover {
+  /* REMOVED GLOW EFFECT - Kept subtle shadow adjustment for depth */
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15); /* Slightly lifted shadow on hover */
+  border-color: transparent; /* Removed purple border on hover */
+  transform: none;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  transform: scale(1);
+  opacity: 1;
+  transition: none;
 }
