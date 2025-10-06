@@ -153,5 +153,62 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       animateBlobs();
     }
+
+    //about section animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains("anim-container-left")) {
+              anime({
+                targets: entry.target.querySelectorAll(".anim-item"),
+                translateY: [40, 0],
+                opacity: [0, 1],
+                duration: 800,
+                delay: anime.stagger(150),
+                easing: "easeOutCubic",
+              });
+            }
+
+            if (entry.target.classList.contains("anim-container-right")) {
+              anime({
+                targets: entry.target.querySelectorAll(".anim-item"),
+                translateX: [-40, 0],
+                opacity: [0, 1],
+                duration: 800,
+                delay: anime.stagger(150),
+                easing: "easeOutCubic",
+              });
+            }
+
+            if (entry.target.classList.contains("anim-section-header")) {
+              anime({
+                targets: entry.target,
+                translateY: [30, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                easing: "easeOutCubic",
+              });
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document
+      .querySelectorAll(".anim-item, .anim-section-header")
+      .forEach((el) => {
+        el.style.opacity = "0";
+      });
+
+    document
+      .querySelectorAll(
+        ".anim-container-left, .anim-container-right, .anim-section-header"
+      )
+      .forEach((el) => {
+        observer.observe(el);
+      });
   }
 });
