@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhargavi Mondem</title>
+      <!-- Tailwind CSS for base styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       // Updated inline config with smooth scroll behavior and new fonts
@@ -13,6 +14,11 @@
           extend: {
             colors: {
               darkTheme: "#010101",
+              primary: {
+                DEFAULT: "#8b5cf6", // violet-500
+                light: "#a78bfa", // violet-400
+              },
+              secondary: "#ec4899",
             },
             fontFamily: {
               montserrat: ["Montserrat", "sans-serif"],
@@ -22,10 +28,12 @@
         },
       };
     </script>
+    <!-- Remix Icons for icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- Google Fonts for typography -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -62,11 +70,12 @@
         </button>
         <a
           href="#contact"
-          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 dark:border-gray-400 rounded-full ml-4 font-semibold text-gray-800 dark:text-white"
+          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 dark:border-gray-400 rounded-full ml-4 font-semibold text-gray-800 hover:bg-gradient-to-r from-secondary to-primary dark:text-white"
           >Contact
           <img src="./assets/contact.png" alt="Contact" class="w-6 dark:invert"
         /></a>
 
+         
         <button class="block md:hidden ml-3" onclick="openMenu()">
           <img
             src="./assets/Menu.png"
@@ -170,31 +179,52 @@
         class="w-11/12 max-w-2xl text-center mx-auto min-h-screen flex flex-col items-center justify-center gap-6 px-4"
         id="hero-content"
       >
-        <img
-          src="./assets/profi2.png"
-          alt="Profile"
-          class="w-40 h-40 aspect-square object-cover rounded-full border border-black"
-        />
+        <!-- Profile Image with Animated Background -->
+        <div class="relative w-36 h-36 sm:w-40 sm:h-40 anim-fade-in">
+          <div
+            class="absolute -inset-2 rounded-full"
+            id="profile-animation-container"
+          >
+            <!-- Animated shapes are injected here by script.js -->
+          </div>
+          <!-- New wrapper for rotating border effect -->
+          <div class="profile-border-container">
+            <!-- NOTE: Provide correct path to your profile image -->
+            <img
+              src="./assets/profi2.png"
+              alt="Profile"
+              class="relative w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </div>
+         <!-- Animated Headline -->
         <h1
-          class="flex items-center justify-center gap-4 font-montserrat font-extrabold text-4xl md:text-5xl uppercase text-gray-800 dark:text-white"
+          class="font-montserrat font-black text-4xl sm:text-5xl md:text-6xl text-gray-800 dark:text-white anim-hero-headline"
         >
           HEY, I'M BHARGAVI
         </h1>
         <div class="flex justify-center">
-          <p
-            class="text-base md:text-xl text-gray-700 text-center leading-relaxed max-w-xl dark:text-white"
+         <p
+          class="text-base sm:text-lg text-gray-700 dark:text-gray-300 text-center leading-relaxed max-w-2xl anim-fade-in"
+        >
+          A passionate Computer Science student passionate about
+          <span
+            class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+            >Full-Stack Development</span
           >
-            I am a Computer Science student passionate about Full-Stack
-            Development and AI, always curious to learn new things and eager to
-            build impactful projects.
-          </p>
+          and
+          <span
+            class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+            >AI</span
+          >, driven to build impactful, real-world projects.
+        </p>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-center gap-6">
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4 anim-fade-in">
           <a
             href="./assets/video/bhargaviM.pdf"
             download
-            class="w-44 px-10 py-3 border-2 rounded-full border-gray-600 flex justify-center items-center gap-2 font-semibold text-black bg-white whitespace-nowrap text-center"
+            class="w-44 px-10 py-3 border-2 rounded-full border-gray-600 flex justify-center items-center gap-2 font-semibold text-black bg-white whitespace-nowrap text-center  hover:scale-105 transition-transform"
           >
             Resume
             <img src="./assets/download.png" alt="download" class="w-5" />
@@ -202,14 +232,14 @@
 
           <a
             href="#contact"
-            class="w-44 px-10 py-3 rounded-full flex justify-center items-center gap-2 font-semibold text-white whitespace-nowrap bg-gradient-to-r from-pink-500 to-violet-500"
+            class="w-44 px-10 py-3 rounded-full flex justify-center items-center gap-2 font-semibold text-white whitespace-nowrap bg-gradient-to-r from-pink-500 to-violet-500 hover:scale-105 transition-transform"
           >
             Contact Me
             <img src="./assets/contact.png" alt="Contact" class="w-6 dark:invert" />
           </a>
         </div>
 
-        <div class="flex items-center justify-center gap-6">
+        <div class="flex items-center justify-center gap-4 sm:gap-6 mt-6 anim-fade-in">
           <a
             href="https://www.linkedin.com/in/bhargavi2520/"
             target="_blank"
@@ -736,6 +766,7 @@
         </div>
       </div>
     </footer>
+      <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

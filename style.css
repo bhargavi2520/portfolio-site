@@ -6,8 +6,11 @@ html {
 body {
   /* Apply the new base font for all body text */
   font-family: "Roboto", sans-serif;
+  background-color: #f9fafb;
 }
-
+.dark body {
+  background-color: #010101; /* Dark mode background */
+}
 /* Sublte, Modern Navigation Hover Effect */
 .nav-link-hover {
   position: relative;
@@ -91,4 +94,65 @@ body {
 .dark .contact-section-bg {
   /* Dark Mode Background Image */
   background-image: url("./assets/backg.jpeg");
+}
+
+/*profile animation*/
+/* Profile Image Animation Styles */
+#profile-animation-container .blob {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  opacity: 0.15;
+  filter: blur(20px);
+  z-index: -1;
+}
+.dark #profile-animation-container .blob {
+  opacity: 0.25;
+  filter: blur(30px);
+}
+
+.profile-border-container {
+  position: relative;
+  padding: 3px; /* Border thickness */
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.dark .profile-border-container {
+  background: #1f2937;
+}
+
+.profile-border-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ec4899, #8b5cf6, #a78bfa, #ec4899);
+  animation: spin 4s linear infinite;
+  transform-origin: 0 0;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.profile-border-container img {
+  border-radius: 50%;
+}
+
+/* Anime.js Helper for Headline Animation */
+.anim-hero-headline .letter {
+  display: inline-block;
+  line-height: 1em;
 }

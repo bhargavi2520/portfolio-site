@@ -62,25 +62,96 @@ if (savedTheme === "dark") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const contactForm = document.getElementById('contact-form');
-    const contactMessage = document.getElementById('contact-message');
+  const contactForm = document.getElementById("contact-form");
+  const contactMessage = document.getElementById("contact-message");
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-        emailjs.sendForm('service_wlhpkv9', 'template_hjj0sif', contactForm, 'FbyQzk1g_nN2pwbIB')
-            .then(() => {
-                contactMessage.textContent = 'Message sent successfully!';
-                setTimeout(() => {
-                    contactMessage.textContent = '';
-                }, 5000);
-                contactForm.reset();
-            })
-            .catch((error) => {
-                console.error('Error sending email:', error);
-                contactMessage.textContent = `Message not sent (Error: ${error.text})`;
-            });
-    };
+    emailjs
+      .sendForm(
+        "service_wlhpkv9",
+        "template_hjj0sif",
+        contactForm,
+        "FbyQzk1g_nN2pwbIB"
+      )
+      .then(() => {
+        contactMessage.textContent = "Message sent successfully!";
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        contactMessage.textContent = `Message not sent (Error: ${error.text})`;
+      });
+  };
 
-    contactForm.addEventListener('submit', sendEmail);
+  contactForm.addEventListener("submit", sendEmail);
+});
+
+//hero section animation
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Anime.js Animations for Hero Section ---
+  if (typeof anime !== "undefined") {
+    // Hero Headline Animation
+    const heroHeadline = document.querySelector(".anim-hero-headline");
+    if (heroHeadline) {
+      heroHeadline.innerHTML = heroHeadline.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+      anime.timeline({ loop: false }).add({
+        targets: ".anim-hero-headline .letter",
+        translateY: [100, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 1400,
+        delay: (el, i) => 300 + 30 * i,
+      });
+    }
+
+    // General Fade-in Animation for on-load elements (Hero section)
+    anime({
+      targets: ".anim-fade-in",
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 800,
+      easing: "easeInOutQuad",
+      delay: anime.stagger(200, { start: 800 }),
+    });
+
+    // Profile Image Background "Aura" Animation
+    const animationContainer = document.getElementById(
+      "profile-animation-container"
+    );
+    if (animationContainer) {
+      const blobCount = 3;
+      for (let i = 0; i < blobCount; i++) {
+        const blob = document.createElement("div");
+        blob.classList.add("blob");
+        blob.style.width = anime.random(50, 120) + "px";
+        blob.style.height = blob.style.width;
+        blob.style.left = anime.random(0, 100) + "%";
+        blob.style.top = anime.random(0, 100) + "%";
+        animationContainer.appendChild(blob);
+      }
+
+      function animateBlobs() {
+        anime({
+          targets: ".blob",
+          translateX: () => anime.random(-25, 25) + "%",
+          translateY: () => anime.random(-25, 25) + "%",
+          scale: () => anime.random(0.8, 1.8),
+          rotate: () => anime.random(-180, 180),
+          duration: 8000,
+          easing: "easeInOutQuad",
+          complete: animateBlobs, // Loop the animation
+        });
+      }
+      animateBlobs();
+    }
+  }
 });
