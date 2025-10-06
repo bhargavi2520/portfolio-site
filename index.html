@@ -54,6 +54,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   </head>
   <body class="overflow-x-hidden dark:bg-[#010101] font-roboto">
     <nav
@@ -1025,7 +1026,195 @@
       </div>
     </section>
   <!-- project section -->
-   
+ <section
+      id="projects"
+      class="mx-auto px-4 py-16 bg-white dark:bg-darkTheme font-sans w-full md:px-8 lg:px-16"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-12 text-center anim-fade-in">
+          <h2
+            class="text-4xl sm:text-5xl font-montserrat font-extrabold text-gray-900 dark:text-white mb-2"
+          >
+            My Projects
+          </h2>
+          <div class="flex justify-center">
+            <div
+              class="h-1.5 w-24 bg-gradient-to-r from-secondary to-primary rounded-full"
+            ></div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8">
+          <!-- Project Card 1: Student Management System -->
+          <div
+            class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] mb-6 anim-project-card"
+          >
+            <div
+              class="relative w-full h-80 rounded-2xl overflow-hidden shadow-2xl group"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://placehold.co/1200x800/8b5cf6/FFFFFF?text=Student+Management');
+                "
+              ></div>
+
+              <div
+                class="absolute inset-0 bg-gray-900/40 transition-all duration-300 group-hover:bg-gray-900/60"
+              ></div>
+
+              <div
+                class="absolute bottom-6 left-6 w-2/3 bg-white/10 backdrop-blur-md rounded-xl p-4 text-white shadow-lg transition-all duration-500 border border-white/20 transform group-hover:bottom-1/2 group-hover:translate-y-1/2"
+              >
+                <h3 class="text-2xl font-bold mb-2">
+                  Student Management System
+                </h3>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://smart-attendance-system-jade.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    Live Preview 🚀
+                  </a>
+                  <a
+                    href="https://github.com/bhargavi2520/smart-attendance-system"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2: TechForGirls -->
+          <div
+            class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] mb-12 anim-project-card"
+          >
+            <div
+              class="relative w-full h-80 rounded-2xl overflow-hidden shadow-2xl group"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://placehold.co/1200x800/ec4899/000000?text=TechForGirls+Website');
+                "
+              ></div>
+
+              <div
+                class="absolute inset-0 bg-gray-900/20 transition-all duration-300 group-hover:bg-gray-900/40"
+              ></div>
+
+              <div
+                class="absolute bottom-6 left-6 w-2/3 bg-white/10 backdrop-blur-md rounded-xl p-4 text-white shadow-lg transition-all duration-500 border border-white/20 transform group-hover:bottom-1/2 group-hover:translate-y-1/2"
+              >
+                <h3 class="text-2xl font-bold mb-2">TechForGirls</h3>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://bhargavi2520.github.io/TechForGirls/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    Live Preview 🚀
+                  </a>
+                  <a
+                    href="https://github.com/bhargavi2520/TechForGirls"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3: Analytics Dashboard -->
+          <div
+            class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] mb-12 anim-project-card"
+          >
+            <div
+              class="relative w-full h-80 rounded-2xl overflow-hidden shadow-2xl group"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://placehold.co/1200x800/8b5cf6/FFFFFF?text=Analytics+Dashboard');
+                "
+              ></div>
+
+              <div
+                class="absolute inset-0 bg-gray-900/40 transition-all duration-300 group-hover:bg-gray-900/60"
+              ></div>
+
+              <div
+                class="absolute bottom-6 left-6 w-2/3 bg-white/10 backdrop-blur-md rounded-xl p-4 text-white shadow-lg transition-all duration-500 border border-white/20 transform group-hover:bottom-1/2 group-hover:translate-y-1/2"
+              >
+                <h3 class="text-2xl font-bold mb-2">Analytics Dashboard</h3>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="#"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    Live Preview 🚀
+                  </a>
+                  <a
+                    href="#"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4: Analytics Dashboard -->
+          <div
+            class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)] mb-12 anim-project-card"
+          >
+            <div
+              class="relative w-full h-80 rounded-2xl overflow-hidden shadow-2xl group"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style="
+                  background-image: url('https://placehold.co/1200x800/8b5cf6/FFFFFF?text=Analytics+Dashboard');
+                "
+              ></div>
+
+              <div
+                class="absolute inset-0 bg-gray-900/40 transition-all duration-300 group-hover:bg-gray-900/60"
+              ></div>
+
+              <div
+                class="absolute bottom-6 left-6 w-2/3 bg-white/10 backdrop-blur-md rounded-xl p-4 text-white shadow-lg transition-all duration-500 border border-white/20 transform group-hover:bottom-1/2 group-hover:translate-y-1/2"
+              >
+                <h3 class="text-2xl font-bold mb-2">Analytics Dashboard</h3>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="#"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    Live Preview 🚀
+                  </a>
+                  <a
+                    href="#"
+                    class="px-5 py-2 bg-white/20 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold backdrop-blur-sm hover:scale-105 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   <!-- //contact section -->
     <div
       id="contact"

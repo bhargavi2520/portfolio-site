@@ -210,6 +210,49 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach((el) => {
         observer.observe(el);
       });
+
+    //project section animation
+    if (typeof anime !== "undefined") {
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animation for main title
+            if (entry.target.classList.contains("anim-fade-in")) {
+              anime({
+                targets: entry.target,
+                translateY: [-30, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                easing: "easeOutExpo",
+              });
+            }
+
+            // Animation for Project Cards
+            if (entry.target.classList.contains("anim-project-card")) {
+              anime({
+                targets: entry.target,
+                translateY: [50, 0],
+                opacity: [0, 1],
+                duration: 1200,
+                easing: "easeOutElastic(1, .8)",
+                delay: 100,
+              });
+            }
+
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Set initial opacity to 0 and observe elements for animation
+      document
+        .querySelectorAll(".anim-fade-in, .anim-project-card")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          observer.observe(el);
+        });
+    }
   }
 
   // Initialize Swiper for Certifications Carousel

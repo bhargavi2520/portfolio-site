@@ -205,3 +205,10 @@ body {
   opacity: 1;
   transition: none;
 }
+
+/* /project section */
+/* Animation Initial States (opacity 0 is handled in JS, but this prevents FOUC) */
+.anim-fade-in,
+.anim-project-card {
+  opacity: 0;
+}
