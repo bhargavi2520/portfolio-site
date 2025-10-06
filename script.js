@@ -319,4 +319,31 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
       });
   }
+
+  // Get a reference to the button
+  const backToTopButton = document.getElementById("back-to-top");
+
+  // Check if the button exists on the page
+  if (backToTopButton) {
+    // Add a scroll event listener to the window
+    window.addEventListener("scroll", () => {
+      // If the user has scrolled down more than 300 pixels...
+      if (window.scrollY > 300) {
+        // ...make the button visible by removing the transition classes.
+        backToTopButton.classList.remove("opacity-0", "translate-y-16");
+      } else {
+        // ...otherwise, hide the button by adding the classes back.
+        backToTopButton.classList.add("opacity-0", "translate-y-16");
+      }
+    });
+
+    // Add a click event listener to the button
+    backToTopButton.addEventListener("click", () => {
+      // When clicked, smoothly scroll the window to the very top.
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
 });

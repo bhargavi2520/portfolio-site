@@ -11,6 +11,16 @@ body {
 .dark body {
   background-color: #121826; /* Dark mode background */
 }
+
+.content-section {
+  height: 100vh; /* Make sections tall to ensure scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 2px solid #e5e7eb;
+}
 /* Sublte, Modern Navigation Hover Effect */
 .nav-link-hover {
   position: relative;
